@@ -37,3 +37,11 @@
 \newcommand{\KS}{\ac{KS}\@\xspace}
 \acrodef{CP}{Categorical Perception}
 \newcommand{\CP}{\ac{CP}\@\xspace}
+
+\usepackage{xcolor}
+\iftrue
+    \newcommand{\comment}[1]
+    {\par {\itshape \color{red} #1 \par}} %comment showed
+\else
+    \newcommand{\comment}[1]{}  %comment not showed
+\fi

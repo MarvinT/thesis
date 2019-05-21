@@ -59,7 +59,7 @@ We performed post-hoc spike-sorting using mountainsort\cite{mountainsort} which 
 
 We then presented a range of morph and training stimuli, selected so that half of the presentations were equally spaced along each of the interpolated morph dimensions in the latent space and half were equally spaced in perceptual space to ensure adequate sampling near the relevant behavioral boundaries. Since the perceptual space is behaviorally determined from each bird independently, we randomly sampled the birds to get a fixed stimuli set that could be used for all recordings.
 
-\subsection*{LDA-like dimensionality reduction}
+\subsection*{Task relevant LDA-like dimensionality reduction}
 
 We concatenate the 50 dimensional single unit representations into a population representation that varies in size from recording to recording. To compress all representations into the same size lower dimensional space, we perform a linear discriminant analysis-like (LDA-like) dimensionality reduction on the data. Instead of the dimensions described in the LDA algorithm, we project the data onto the dimensions determined by logistic regression performed on the endpoints of the 24 possible comparisons ever behaviorally presented to any cohort of birds. This provided a 24 dimensional representation of the population response that contains the spike timing information of individual units that maximally discriminates the 8 endpoint or template stimuli.
 

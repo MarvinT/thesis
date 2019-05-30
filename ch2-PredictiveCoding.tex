@@ -25,6 +25,15 @@ This minimum network was to simply predict each frequency band as a univariate G
 \subsection{Contrastive Predictive Coding}
 The last method I have explored is Contrastive Predictive Coding\cite{CPC}. CPC is a method that takes high dimensional time varying data, and attempts to do representation learning on it to provide a representation that captures the predictive information of the signal. They do this by encoding the high dimensional signal in a low dimensional latent space, $Z$, using an encoding network, and then feeding the latent space into a recurrent neural network which outputs a context in another latent space, $C$. $c_t$ is then used to linearly classify if a sample is actually the next time sample, or drawn from a distribution (I have used other random samples from the spectrogram). The whole model is learned end-to-end, providing an encoding information to a $Z$ space that both contains information that is useful for predictions, as well as information that is predictable. The model also provides the $C$ which also contains extra context from the past.
 
+\begin{figure}[tbp] 
+  \centering
+  \includegraphics[width=\textwidth]{figures/encoder.pdf}
+  \caption[8 dimensional $Z$ space learned by Contrastive Predictive Coding.]
+{The representation learned by the encoder of CPC. Top: The 8 dimensional latent space $Z$ created by pushing each spectogram time slice through the encoder network. Bottom: 2048 Frequency bin spectrogram representation (not log spaced) fed into the encoder and the CPC network.
+\index{encoder}}
+  \label{fig:encoder}
+\end{figure}
+
 \subsection{Future Improvements}
  for CPC
 wavenet style dilations

@@ -1,6 +1,6 @@
 \chapter{Predictive Coding}
 
-\acf{PC} is the theory that the ``purpose'' of the perceptual system is not to encode the maximum amount of information about the current state of the world, but rather to provide a prediction of the posterior distribution of the future state of the world. 
+\acf{PC} is the theory that the ``purpose'' of the perceptual system is not to encode the maximum amount of information about the current state of the world, but rather to provide a prediction of (the posterior distribution of) the future state of the world. 
 
 Indeed, this provides a parsimonious explanation for much of the brain's function. If you consider a video of two people talking in a living room with an old TV displaying static - most of the Shannon information in the video will be in the TV's display. While the speck of static may be a result of a particle left by the big bang hitting the antenna, our brain doesn't devote the majority of its resources to keep track of the white noise patterns. i.e. the brain's sensory processing system isn't designed to maximize the mutual information between the sensory signals it receives. Instead, if you consider the temporal information, the brain tries to encode the predictive information within its sensory streams. \PC has been hailed by some as ``The unifying theory of the brain.''
 
@@ -17,7 +17,15 @@ This is no longer true with modern machine learning techniques and methods for h
 \section{Models}
 
 \subsection{Deep mixture of beta distributions}
-My first attempt was to create a neural network that, given a window of spectrogram, predict the probability distribution of each frequency band in the next time bin of the spectrogram. The network was optimized by maximizing the log likelihood of the model. I modelled the probability distribution as a mixture of 3 beta distributions. The network was two fully connected layers with an output for a weight, $w$, and the two beta distribution parameters, $\alpha$ and $\beta$, for each of the three beta distributions, for each of the frequency bins. This network was very ill-behaved and I spent considerable time implementing as many numerical analysis tricks to control and regularize the networks exploding values. In the end I began to strip away as many of the complexities of the network as I could to create a minimum viable network.
+My first attempt was to create a neural network that, given a window of spectrogram, predict the probability distribution of each frequency band in the next time bin of the spectrogram. The network was optimized by maximizing the log likelihood of the model. I modelled the probability distribution as a mixture of 3 beta distributions. The network was two fully connected layers with an output for a weight, $w$, and the two beta distribution parameters, $\alpha$ and $\beta$, for each of the three beta distributions, for each of the frequency bins. This network was very ill-behaved and I spent considerable time implementing as many numerical analysis tricks to control and regularize the networks exploding values. Most were relatively simple and included but was not limited to gradient clipping, different beta distribution approximations, the log-sum-exp trick and even an added cost function tied to the standard deviation of the beta distributions to try to prevent them from becoming delta functions.
+
+One interesting method I used was adversarial training\cite{goodfellow2014explaining,lakshminarayanan2017simple}. This consists of calculating the gradient on the input and for each training example, create an additional example that is $\epsilon$ in the d
+
+Adversarial examples.
+beta distribution approximations.
+log-sum-exp trick.
+
+In the end I began to strip away as many of the complexities of the network as I could to create a minimal viable network.
 
 \subsection{Deep Gaussian prediction}
 This minimum network was to simply predict each frequency band as a univariate Gaussian with a mean and a standard deviation, and let the network try and deal with any covariances. This network trained easily enough, but didn't do nearly as good of a job at predicting as the deep mixture of beta distributions networks that were stopped before being corrupted by NaNs. However, even with this poor performance I did notice peaks in the likelihood that corresponded to motif boundaries.

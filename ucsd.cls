@@ -489,7 +489,7 @@
     \bigskip \medskip
     {\@field}
     \ifx\@specialization\@isnotdefined \else%
-         (with a specialization in {\@specialization})\fi
+         with a Specialization in {\@specialization}\fi
     \par
     \bigskip \medskip
     by \par
@@ -716,7 +716,7 @@ on microfilm and electronically: }}\\
   \vspace{.3in}
   {\@degreetitle} in \@field
   \ifx\@specialization\@isnotdefined \else
-      \ (with a specialization in \@specialization)
+      \ with a Specialization in \@specialization
   \fi
   \par
   \vspace{.3in}

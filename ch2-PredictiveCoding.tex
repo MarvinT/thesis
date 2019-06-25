@@ -31,7 +31,7 @@ Figure \ref{fig:encoder} shows an example 8-dimensional $Z$ latent space learned
   \centering
   \includegraphics[width=\textwidth]{figures/encoder.pdf}
   \caption[8 dimensional $Z$ space learned by Contrastive Predictive Coding.]
-{The representation learned by the encoder of \CPC. Top: The 8-dimensional latent space $Z$ created by pushing each 2048-dimensional spectrogram time slice through the encoder network. Bottom: 2048 Frequency bin spectrogram representation fed into the encoder and the \CPC network. The figure has been log scaled in the frequency axis to provide a visualization similar to a mel-scaled spectrogram; however, the 2048 dimensions are not log spaced so the \CPC network must learn where to allocate its weights to encode information in the predictive and predictable frequency dimensions. It would be interesting to see if the allocations it learns match that of a mel-scaled spectrogram.
+{\emph{8 dimensional $Z$ space learned by Contrastive Predictive Coding.} The representation learned by the encoder of \CPC. Top: The 8-dimensional latent space $Z$ created by pushing each 2048-dimensional spectrogram time slice through the encoder network. Bottom: 2048 Frequency bin spectrogram representation fed into the encoder and the \CPC network. The figure has been log scaled in the frequency axis to provide a visualization similar to a mel-scaled spectrogram; however, the 2048 dimensions are not log spaced so the \CPC network must learn where to allocate its weights to encode information in the predictive and predictable frequency dimensions. It would be interesting to see if the allocations it learns match that of a mel-scaled spectrogram.
 \index{encoder}}
   \label{fig:encoder}
 \end{figure}

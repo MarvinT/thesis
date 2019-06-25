@@ -1,14 +1,6 @@
-\begin{figure}[tbp] 
-  \centering
-  \includegraphics[width=114mm]{figures/fig07_derivative.pdf}
-  \caption[The \Thielk curve captures how neural representation changes as we move along a morph dimension]
-{(continued on following page.)
-\index{derivative}}
-  \label{fig:derivative}
-\end{figure}
-
 \begin{figure}[tp]
-  \contcaption{
+  \caption[The \Thielk curve captures how neural representation changes as we move along a morph dimension]{
+  \emph{The \Thielk curve captures how neural representation changes as we move along a morph dimension}
 (A)	The cross correlation matrix for a single recording on the morph dimension from motif A to motif C. Average cosine distance in the task relevant neural representation subspace between pairs of morph positions are initially calculated. These values are then upsampled to the full 128 pixel grid using nearest neighbor interpolation.
 (B-C)	Average cross correlation matrix for all recordings (using the final stimuli set) for morph dimensions A to E and A to H.
 (D)	Using a polynomial of order 0 through 6 to estimate the \Thielk curve for a single recording and morph dimension, A to C (same as above).
@@ -19,5 +11,13 @@ Vertical lines represent the behaviorally determined psychometric boundaries for
 (J)	Cumulative distributions of the value of the 4th order \Thielk curve at psychometric boundary locations of the same dimension vs different dimensions as a control. A one-sided KS test provides a P value of $p=1.47E-121$
 (K)	Average accuracy of predicting the morph dimension of a \Thielk curve from a held out recorded neural population as we increase the order of the polynomial. The green and orange curves use the optimized polynomial coefficients to predict the morph dimension label. The red and blue curves use the normalized \Thielk curve evaluated at 50 evenly spaced points along the morph dimension. The red and green curves use a multinomial logistic regression as the classification model. The orange and blue curves use XGBoost as the classification model. The vertical lines highlight the maximum average held-out prediction accuracy achieved by each method. Chance performance ($1/24$) plotted as a horizontal dotted line.
 (L)	Correlation between the boundary sensitivity parameter (B) of the psychometric curve and the value of the 4th order \Thielk curve for the given boundary location. Plotted above and to the right are the projected histograms and associated kernel density estimate of the distribution. Plotted as a line is the regression between these two variables with 1000 fold bootstrapped 95\% confidence interval plotted as a shaded region around the regression.
-}
+\index{derivative}}
 \end{figure}
+
+\begin{figure}[tbp] 
+\contcaption{\emph{The \Thielk curve captures how neural representation changes as we move along a morph dimension} Continued from previous page.}
+  \centering
+  \includegraphics[width=114mm]{figures/fig07_derivative.pdf}
+  \label{fig:derivative}
+\end{figure}
+

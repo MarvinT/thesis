@@ -1,5 +1,5 @@
-\section{Introduction}
-\subsection{What is categorical perception?}
+\chapter*{Introduction}
+\section{What is categorical perception?}
 
 \acf{CP} is a phenomenon that occurs when categories held by the observer, either learned or inherent, influence the observer’s perception. This means that the perception of changes in the stimuli does not depend solely on the physical changes in the stimuli. Small changes in stimuli that lie near or across category boundaries are very noticeable while more substantial changes in other regions may not be noticeable at all. This means that our perceptual systems transform relatively linear sensory signals into relatively nonlinear internal representations.
 
@@ -7,11 +7,11 @@
   \centering
   \includegraphics[width=0.75\textwidth]{figures/cp_def.pdf}
   \caption[A schematic of idealized categorical perception]
-{A schematic of idealized categorical perception. \emph{Top green}: The psychometric function or the probability of classifying a stimulus as A or B as you move along a physical continuum between A and B. The category boundary occurs at the vertical red dotted line and there is some amount of uncertainty near this boundary. The boundary is defined as the point of perceived equality or the stimuli location on the physical continuum where a participant is equally likely to classify the stimuli as A or B. \emph{Top Blue}: is the discrimination curve describing how well a participant can discriminate between nearby stimuli. \CP has been described as a peak in the discrimination curve near the category boundary. The lower axis indicates how the perceptual space is stretched compared to the physical continuum causing stimuli that are within category limits to be perceived as closer than stimuli that lie across category boundaries but are an equal distance apart.\index{cp}}
+{\emph{A schematic of idealized categorical perception}. \emph{Top green}: The psychometric function or the probability of classifying a stimulus as A or B as you move along a physical continuum between A and B. The category boundary occurs at the vertical red dotted line and there is some amount of uncertainty near this boundary. The boundary is defined as the point of perceived equality or the stimuli location on the physical continuum where a participant is equally likely to classify the stimuli as A or B. \emph{Top Blue}: is the discrimination curve describing how well a participant can discriminate between nearby stimuli. \CP has been described as a peak in the discrimination curve near the category boundary. The lower axis indicates how the perceptual space is stretched compared to the physical continuum causing stimuli that are within category limits to be perceived as closer than stimuli that lie across category boundaries but are an equal distance apart.\index{cp}}
   \label{fig:cpdef}
 \end{figure}
 
-\subsection{What is required for \CP research?}
+\section{What is required for \CP research?}
 
 The fundamental difficulty with \CP research is that it generally occurs in the perception of a high dimensional space where naturally occurring ecologically relevant stimuli exist only on non-uniformly distributed sub-manifold of that space. In terms of auditory \CP in human speech, the high dimensional space is the space of all possible sounds that could possibly be heard, most of which would sound like random noise. The naturally occurring ecologically relevant stimuli are all the possible spoken sounds or phonemes that are useful for human speech production and comprehension, which exist in a much smaller lower-dimensional subset of all possible sounds. Even within this subset of sounds, not all possible phonemes are heard with equal probability, and this distributional information may begin to shape our perceptual systems even before birth.
 
@@ -28,7 +28,7 @@ Thus the approach we present streamlines the following steps for \CP research in
     \item Generation of a synthetic continuum between the categories/ category exemplars.
 \end{enumerate}
 
-\subsection{History of Categorical Perception}
+\section{History of Categorical Perception}
 
 There is a long history of categorical perception research.
 The invention of the formant speech synthesizer known as the Pattern Playback at Haskins Laboratories \cite{patternplayback} made the discovery of \CP possible.
@@ -57,13 +57,13 @@ These studies are only possible after considerable background work establishes t
 
 Categorical boundary location preference has also been explored, mostly in the context of human speech. Early explanations included the motor theory of speech perception, which suggested that the explanation for \CP lay in the anatomy of speech production, specifically, physical differences during articulation \cite{liberman1967perception}. There have also been arguments made that a biological predisposition influenced the development of human languages pushing phenome boundaries to locations of increased sensitivity \cite{stevens1981constraints, goldstone2010categorical, halle1979some}
 
-\subsection{Learned Categorical Perception}
+\section{Learned Categorical Perception}
 
 However, we also know that the boundary location is experience dependent. Native language exposure can shift boundary locations. Also, a sound difference that crosses a boundary of a language is more discriminable to speakers of that language than to speakers of a language that doesn’t have a boundary in that location.
 
 \comment{Lots more here about learning on \CP, also context dependency}
 
-\subsection{Our Contribution}
+\section{Our Contribution}
 We use machine learning techniques to approximate unsupervised statistical learning of the distribution of the set of natural motifs while compressing it into a lower dimensional representation. This allows us to generate a continuum of synthetic motifs that lie between exemplars.
 
 These types of machine learning methods allow for the creation of synthetic continua between exemplars when trained upon a corpus of that stimuli type. This allows for the exploration of natural ecologically relevant animal communication signals as we have done here. It also would allow the exploration of categorical perception in non-English languages. For example, technical difficulty in creating the Chinese-based synthetic continuum suitable for a \CP study has been proposed as a reason for the large number of papers focused on \CP in lexical tones in the Chinese language \cite{zhang2013categorical}.
